@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>TNS Studios Wiki</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div id="cursor"></div>
+
+    <div id="intro">
+    <h1 class="glitch" data-text="TNS STUDIOS">TNS STUDIOS</h1>
+</div>
+
+<div class="topbar">
+    <h1>TNS Studios Wiki</h1>
+    <input id="search" onkeyup="searchPages()" placeholder="Search Wiki...">
+</div>
+
+<div id="searchResults" class="search-results"></div>
+<p id="resultCount"></p>
+
+<!-- Buttons -->
+<button class="settings-btn" onclick="openPage('settings')">⚙️</button>
+<button class="feedback-btn" onclick="openFeedback()">💬</button>
+
+<div class="menu">
+    <button onclick="openPage('welcome')">Home</button>
+    <button onclick="openPage('studio')">Studio</button>
+    <button onclick="openPage('game')">Game</button>
+    <button onclick="openPage('goal')">Goal</button>
+    <button onclick="openPage('community')">Community</button>
+</div>
+
+<div class="container">
+
+    <!-- 👋 WELCOME -->
+    <div id="welcome" class="page welcome">
+        <h2>👋 Welcome to TNS Studios</h2>
+        <p>Explore horror games, stories, and development inside TNS Studios Wiki.</p>
+        <button onclick="openPage('studio')">Enter Wiki</button>
+    </div>
+
+    <!-- 📌 STUDIO -->
+    <div id="studio" class="page">
+        <h2>Studio</h2>
+        <p>TNS Studios is a horror game studio focused on immersive experiences and storytelling.</p>
+    </div>
+
+    <!-- 🎮 GAME -->
+    <div id="game" class="page">
+        <h2>Helix Works</h2>
+        <p>A psychological horror game with survival mechanics and deep lore.</p>
+    </div>
+
+    <!-- 🎯 GOAL -->
+    <div id="goal" class="page">
+        <h2>Goal</h2>
+        <p>To become a successful indie horror studio with a strong community.</p>
+    </div>
+
+    <!-- 👥 COMMUNITY -->
+    <div id="community" class="page">
+        <h2>Community</h2>
+        <p>TNS Studios listens to feedback and improves games with the community.</p>
+
+        <a href="https://discord.gg/stJfyBJs">Discord</a><br>
+        <a href="https://whatsapp.com/channel/0029Vb877FL1CYoKMJP54h14">WhatsApp</a>
+    </div>
+
+    <!-- ⚙️ SETTINGS -->
+    <div id="settings" class="page settings-page">
+        <h2>Settings ⚙️</h2>
+
+        <div class="settings-box">
+            <h3>Theme</h3>
+            <button onclick="toggleTheme()">Dark / Light</button>
+
+            <h3>Text Size</h3>
+            <button onclick="increaseText()">Text +</button>
+            <button onclick="decreaseText()">Text -</button>
+            <button onclick="resetText()">Reset</button>
+        </div>
+    </div>
+
+</div>
+
+<!-- 💬 FEEDBACK -->
+<div id="feedbackBox" class="feedback-box">
+    <h2>Feedback / Questions</h2>
+    <textarea id="feedbackText" placeholder="Write your message..."></textarea>
+
+    <button onclick="sendFeedback()">Send</button>
+    <button onclick="closeFeedback()">Close</button>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
