@@ -180,18 +180,11 @@ function sendFeedback() {
         return;
     }
 
-    if (userMessage.length < 5) {
-        alert("Message too short!");
-        return;
-    }
-
-    const params = {
-        from_name: "T3RM1N4L",
+    emailjs.send("service_5uvkwjt", "template_6oy1wzb", {
+        from_name: "TNS User",
         message: userMessage,
         time: new Date().toLocaleString()
-    };
-
-    emailjs.send("service_5uvkwjt", "template_6oy1wzb", params)
+    })
     .then(() => {
         alert("Sent 🚀");
         textEl.value = "";
@@ -199,6 +192,6 @@ function sendFeedback() {
     })
     .catch((err) => {
         console.error("EmailJS ERROR:", err);
-        alert("Failed ❌ check console");
+        alert("Failed ❌");
     });
 }
