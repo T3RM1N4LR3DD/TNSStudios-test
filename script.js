@@ -1,11 +1,11 @@
 // =======================
-// EMAILJS INIT
+// INIT (WICHTIG)
 // =======================
-(function () {
+window.addEventListener("load", () => {
     emailjs.init({
-        publicKey: "mU4Gv7hUESNrYdwy" // dein funktionierender Key
+        publicKey: "mU4Gv7hUESNrYdwy"
     });
-})();
+});
 
 
 // =======================
