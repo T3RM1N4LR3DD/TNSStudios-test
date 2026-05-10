@@ -1,32 +1,35 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    google-site-verification=CTcW4fmsvKavpaNqz2bgIeo_Lwm276qA7tjmixiEEEM
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- EmailJS -->
+<title>TNS Studios Wiki</title>
+<link rel="stylesheet" href="style.css">
+
+<!-- EmailJS -->
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
 <script>
 (function () {
     emailjs.init({
-        publicKey: "mU4Gv7hUESNrYdwy" // nimm den funktionierenden alten Key!
+        publicKey: "mU4Gv7hUESNrYdwy"
     });
 })();
 </script>
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>TNS Studios Wiki</title>
-    <link rel="stylesheet" href="style.css">
 
 </head>
 
 <body>
 
-<div id="cursor"></div>
-
-    <div id="intro">
-    <h1 class="glitch" data-text="TNS STUDIOS">TNS STUDIOS</h1>
+<div id="intro">
+    <h1 class="glitch">TNS Studios</h1>
 </div>
+
+<audio id="introSound" src="intro.mp3"></audio>
+
+<div id="cursor"></div>
 
 <div class="topbar">
     <h1>TNS Studios Wiki</h1>
@@ -50,61 +53,138 @@
 
 <div class="container">
 
-    <!-- 👋 WELCOME -->
+    <!-- HOME -->
     <div id="welcome" class="page welcome">
-        <h2>👋 Welcome to TNS Studios</h2>
-        <p>Explore horror games, stories, and development inside TNS Studios Wiki.</p>
-        <button onclick="openPage('studio')">Enter Wiki</button>
+        <h2>👋 Welcome to TNS Studios ⚡</h2>
+
+        <p>
+            We are an independent game studio focused on creating immersive psychological horror experiences using Unreal Engine.
+        </p>
+
+        <p>
+            Our goal is to build worlds that feel alive, intense, and unforgettable.
+        </p>
+
+        <p>
+            Everything here is still in development but step by step, the vision becomes real.
+        </p>
     </div>
 
-    <!-- 📌 STUDIO -->
+    <!-- STUDIO -->
     <div id="studio" class="page">
-        <h2>Studio</h2>
-        <p>TNS Studios is a horror and normal game studio focused on immersive experiences and storytelling.</p>
+        <h2>🏢 Studio</h2>
+
+        <p>
+            TNS Studios is a small indie game studio using Unreal Engine.
+        </p>
+
+        <p>
+            We focus on atmosphere, storytelling, and immersive horror experiences instead of rushed gameplay.
+        </p>
+
+        <p>
+            The project is long term and may take 1–2 years until release depending on development progress.
+        </p>
+
+        <p>
+            Our mission is to create something unique and unforgettable.
+        </p>
     </div>
 
-    <!-- 🎮 GAME -->
+    <!-- GAME -->
     <div id="game" class="page">
-        <h2>Helix Works</h2>
-        <p>A psychological horror game with survival mechanics and deep lore.</p>
+        <h2>🎮 Game</h2>
+
+        <p>
+            Project: UNKNOWN, a psychological horror experience still in development.
+        </p>
+
+        <p>
+            The game focuses on fear, tension, and deep immersion.
+        </p>
+
+        <p>
+            You will not just play it, you will experience it.
+        </p>
+
+        <p>
+            Built around atmosphere, sound design, and psychological horror elements.
+        </p>
+
+        <p>
+            Status: Early Development
+        </p>
     </div>
 
-    <!-- 🎯 GOAL -->
+    <!-- GOAL -->
     <div id="goal" class="page">
-        <h2>Goal</h2>
-        <p>To become a successful indie horror studio with a strong community.</p>
+        <h2>🎯 Goal</h2>
+
+        <p>
+            Our goal is not just to make a game.
+        </p>
+
+        <p>
+            We want to create a psychological horror experience that stays in your mind long after playing.
+        </p>
+
+        <p>
+            Focus is on emotion, atmosphere, and immersion instead of cheap jump scares.
+        </p>
+
+        <p>
+            Every detail is designed to build tension, curiosity, and fear.
+        </p>
+
+        <p>
+            This is a longm term vision we are slowly bringing to life.
+        </p>
     </div>
 
-    <!-- 👥 COMMUNITY -->
+    <!-- COMMUNITY -->
     <div id="community" class="page">
-        <h2>Community</h2>
-        <p>TNS Studios listens to feedback and improves games with the community.</p>
+        <h2>🌍 Community Hub</h2>
 
-       <a href="https://discord.gg/5pZ5fYjAcc" target="_blank">Discord</a><br>
-<a href="https://whatsapp.com/channel/0029Vb877FL1CYoKMJP54h14" target="_blank">WhatsApp</a><br>
-<a href="https://www.roblox.com/share/g/748083609" target="_blank">Roblox</a>
+        <p>
+            Welcome to the official TNS Studios community.
+        </p>
+
+        <p>
+            Here you can follow updates, development progress, and behind-the-scenes content.
+        </p>
+
+        <p>
+            Join the journey from the beginning and support the project.
+        </p>
+
+        <p>
+            🔗 WhatsApp Channel:<br>
+            <a href="https://whatsapp.com/channel/0029Vb877FL1CYoKMJP54h14" target="_blank">
+                Join Community
+            </a>
+        </p>
+        <p>
+            🔗 Discord Server:<br>
+            <a href="https://discord.gg/sFAEUH3NX">
+                Join Community
+            </a>
+        </p>
     </div>
 
-    <!-- ⚙️ SETTINGS -->
-    <div id="settings" class="page settings-page">
-        <h2>Settings ⚙️</h2>
-
-        <div class="settings-box">
-            <h3>Theme</h3>
-            <button onclick="toggleTheme()">Dark / Light</button>
-
-            <h3>Text Size</h3>
-            <button onclick="increaseText()">Text +</button>
-            <button onclick="decreaseText()">Text -</button>
-            <button onclick="resetText()">Reset</button>
-        </div>
+    <!-- SETTINGS -->
+    <div id="settings" class="page">
+        <h2>⚙️ Settings</h2>
+        <button onclick="toggleTheme()">Dark / Light</button>
+        <button onclick="increaseText()">Text +</button>
+        <button onclick="decreaseText()">Text -</button>
+        <button onclick="resetText()">Reset</button>
     </div>
 
 </div>
 
 <!-- 💬 FEEDBACK -->
 <div id="feedbackBox" class="feedback-box">
-    <h2>Feedback / Questions</h2>
+    <h2>Feedback</h2>
     <textarea id="feedbackText" placeholder="Write your message..."></textarea>
 
     <button onclick="sendFeedback()">Send</button>
@@ -112,6 +192,33 @@
 </div>
 
 <script src="script.js"></script>
+
+<!-- 🔊 INTRO FIX (nur Sound + Animation korrekt) -->
+<script>
+window.addEventListener("load", () => {
+    const intro = document.getElementById("intro");
+    const sound = document.getElementById("introSound");
+
+    let started = false;
+
+    function startIntro() {
+        if (started) return;
+        started = true;
+
+        sound.volume = 0.6;
+        sound.play().catch(err => console.log("Sound blockiert:", err));
+
+        setTimeout(() => {
+            intro.style.opacity = "0";
+            setTimeout(() => intro.remove(), 800);
+        }, 3000);
+    }
+
+    // Klick + Tastendruck als Start
+    window.addEventListener("click", startIntro);
+    window.addEventListener("keydown", startIntro);
+});
+</script>
 
 </body>
 </html>
