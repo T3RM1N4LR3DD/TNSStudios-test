@@ -1,14 +1,9 @@
+
 // =======================
 // EMAILJS INIT
 // =======================
-emailjs.init({
-    publicKey: "mU4Gv7hUESNrYdwy"
-});
+emailjs.init("2pz6rTB78e3ynlLC7");
 
-
-// =======================
-// GLOBALS
-// =======================
 let fontSize = 16;
 const MAX = 28;
 const MIN = 10;
@@ -17,7 +12,7 @@ let originalContent = {};
 
 
 // =======================
-// PAGE INIT
+// INIT PAGE
 // =======================
 document.addEventListener("DOMContentLoaded", () => {
 
@@ -28,6 +23,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const intro = document.getElementById("intro");
 
+    // =======================
+    // INTRO TIMER
+    // =======================
     setTimeout(() => {
         if (intro) {
             intro.style.opacity = "0";
@@ -41,7 +39,9 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }, 1500);
 
-    // Cursor
+    // =======================
+    // CURSOR
+    // =======================
     const cursor = document.getElementById("cursor");
 
     if (cursor) {
@@ -57,8 +57,13 @@ document.addEventListener("DOMContentLoaded", () => {
 // PAGE SYSTEM
 // =======================
 function openPage(pageId) {
-
     const pages = document.querySelectorAll(".page");
+
+    const currentVisible = document.querySelector(".page.show");
+
+    if (currentVisible && currentVisible.id === pageId) {
+        pageId = "welcome";
+    }
 
     pages.forEach(p => {
         p.classList.remove("show");
@@ -69,7 +74,9 @@ function openPage(pageId) {
 
     if (target) {
         target.style.display = "block";
-        setTimeout(() => target.classList.add("show"), 10);
+        setTimeout(() => {
+            target.classList.add("show");
+        }, 10);
     }
 }
 
@@ -79,9 +86,11 @@ function openPage(pageId) {
 // =======================
 function searchPages() {
 
-    const input = document.getElementById("search").value.toLowerCase().trim();
+    const inputEl = document.getElementById("search");
     const resultsBox = document.getElementById("searchResults");
     const resultCount = document.getElementById("resultCount");
+
+    const input = inputEl.value.toLowerCase().trim();
 
     resultsBox.innerHTML = "";
 
@@ -112,7 +121,7 @@ function searchPages() {
         resultsBox.appendChild(item);
     });
 
-    resultCount.innerText = input ? `${results.length} result(s)` : "";
+    resultCount.innerText = input ? results.length + " result(s)" : "";
 }
 
 
@@ -148,7 +157,7 @@ function resetText() {
 
 
 // =======================
-// FEEDBACK SYSTEM (FIXED + LOADING)
+// FEEDBACK (EMAILJS)
 // =======================
 function openFeedback() {
     document.getElementById("feedbackBox").style.display = "flex";
@@ -158,56 +167,28 @@ function closeFeedback() {
     document.getElementById("feedbackBox").style.display = "none";
 }
 
-
-// loading helper
-function setLoading(state) {
-    const btn = document.getElementById("sendBtn");
-
-    if (!btn) return;
-
-    if (state) {
-        btn.disabled = true;
-        btn.innerText = "Sending...";
-    } else {
-        btn.disabled = false;
-        btn.innerText = "Send";
-    }
-}
-
-
-// MAIN SEND
 function sendFeedback() {
 
     const textEl = document.getElementById("feedbackText");
-    const userMessage = textEl.value.trim();
+    const userMessage = textEl.value;
 
-    if (!userMessage) {
+    if (!userMessage.trim()) {
         alert("Write something first!");
         return;
     }
 
-    setLoading(true);
-
-    const params = {
-        from_name: "TNS User",
-        message: userMessage,
-        time: new Date().toLocaleString()
-    };
-
-    emailjs.send("service_5uvkwjt", "template_6oy1wzb", params)
-        .then(() => {
-
-            alert("Sent 🚀");
-
-            textEl.value = "";
-            closeFeedback();
-
-        })
-        .catch((err) => {
-            console.error("EMAIL ERROR:", err);
-            alert("Failed ❌ check console");
-        })
-        .finally(() => {
-            setLoading(false);
-        });
+    emailjs.send("service_5uvkwjt", "template_6oy1wzb", {
+        from_name: "T3RM1N4L",
+        time: new Date().toLocaleString(),
+        message: userMessage
+    })
+    .then(() => {
+        alert("Sent 🚀");
+        textEl.value = "";
+        closeFeedback();
+    })
+    .catch(err => {
+        console.error("EmailJS ERROR:", err);
+        alert("Failed, check console");
+    });
 }
