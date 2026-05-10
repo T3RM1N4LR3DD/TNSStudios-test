@@ -183,7 +183,7 @@ function sendFeedback() {
         message: userMessage
     })
     .then(() => {
-        alert("Sent 🚀");
+        alert("Sent");
         textEl.value = "";
         closeFeedback();
     })
